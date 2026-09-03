@@ -1,0 +1,36 @@
+[project]
+name = "fupan-mcp"
+version = "0.1.0"
+description = "复盘 (Fupan) — A memory layer for trading agents, shipped as an MCP server. Your agent recalls similar market situations before trading, and writes back post-trade reviews."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "TODO: 她的名字" }]
+keywords = ["mcp", "trading", "agent", "memory", "a-share", "quant", "fupan"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+dependencies = [
+    "mcp>=2.0.0",
+]
+
+[project.optional-dependencies]
+ashare = ["akshare>=1.14.0"]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+fupan-mcp = "fupan_mcp.server:main"
+
+[project.urls]
+Homepage = "https://github.com/TODO她的账号/fupan-mcp"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fupan_mcp"]
